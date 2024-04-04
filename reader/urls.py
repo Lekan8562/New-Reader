@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.sitemaps.views import sitemap
 from blog.sitemaps import PostSitemap
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 sitemaps = {
        'posts':PostSitemap, 
 }
@@ -30,3 +30,5 @@ urlpatterns = [
     path('cms/',include('cms.urls')),
     path('froala_editor/', include('froala_editor.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
